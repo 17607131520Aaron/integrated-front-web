@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import type { IMenuItem } from './type';
 
 interface IUseLayout {
@@ -10,7 +11,7 @@ const useLayout = ({ routerState }: IUseLayout) => {
 
   // 根据搜索文本过滤菜单
   const filterMenu = (items: IMenuItem[]): IMenuItem[] => {
-    if (!items || items.length === 0) return [];
+    if (!items || items.length === 0) {return [];}
     return items.filter(item => {
       const match = item.title.toLowerCase().includes(searchText.toLowerCase());
       if (item.children) {
@@ -30,7 +31,7 @@ const useLayout = ({ routerState }: IUseLayout) => {
 
   // 递归获取所有路径
   const getAllPaths = (item: IMenuItem): Array<{ id: string; path: string }> => {
-    if (item.path) return [{ id: item.id, path: item.path }];
+    if (item.path) {return [{ id: item.id, path: item.path }];}
     return item.children?.flatMap(getAllPaths) || [];
   };
 

@@ -8,19 +8,40 @@
   "tabWidth": 2,
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "jsxBracketSameLine": false,
+  "bracketSameLine": false,
   "jsxSingleQuote": false,
+  "quoteProps": "as-needed",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "embeddedLanguageFormatting": "auto",
+  "insertPragma": false,
+  "requirePragma": false,
   "overrides": [
     {
       "files": "*.md",
       "options": {
-        "tabWidth": 2
+        "tabWidth": 2,
+        "proseWrap": "preserve"
       }
     },
     {
       "files": "*.json",
       "options": {
-        "printWidth": 120
+        "printWidth": 120,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "tabWidth": 2,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "singleQuote": false
       }
     }
   ]

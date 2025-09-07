@@ -1,11 +1,12 @@
 
 import js from '@eslint/js'; // 导入ESLint核心JavaScript规则
+import { globalIgnores } from 'eslint/config'; // 导入ESLint全局忽略配置
+import prettier from 'eslint-config-prettier'; // 导入Prettier配置以避免冲突
 import importPlugin from 'eslint-plugin-import'; // 导入ESLint导入/导出规则插件
 import jsxA11y from 'eslint-plugin-jsx-a11y'; // 导入JSX可访问性规则插件
 import react from 'eslint-plugin-react'; // 导入React规则插件
 import reactHooks from 'eslint-plugin-react-hooks'; // 导入React Hooks规则插件
 import reactRefresh from 'eslint-plugin-react-refresh'; // 导入React Refresh规则插件
-import { globalIgnores } from 'eslint/config'; // 导入ESLint全局忽略配置
 import globals from 'globals'; // 导入全局变量定义
 import tseslint from 'typescript-eslint'; // 导入TypeScript ESLint插件
 
@@ -20,6 +21,7 @@ export default tseslint.config([
       tseslint.configs.recommended, // TypeScript ESLint推荐规则
       reactHooks.configs['recommended-latest'], // React Hooks最新推荐规则
       reactRefresh.configs.vite, // Vite的React Refresh规则
+      prettier, // Prettier配置，必须放在最后以覆盖冲突规则
     ],
     languageOptions: {
       // 语言选项配置
@@ -149,6 +151,14 @@ export default tseslint.config([
       'max-depth': ['error', 4], // 限制嵌套块的最大深度
       'max-nested-callbacks': ['error', 3], // 限制回调嵌套的最大深度
       'max-params': ['error', 5], // 限制函数参数的最大数量
+      'prefer-const': 'error', // 优先使用const
+      'no-var': 'error', // 禁止使用var
+      'eqeqeq': ['error', 'always'], // 强制使用===和!==
+      'curly': ['error', 'all'], // 强制所有控制语句使用大括号
+      'no-eval': 'error', // 禁止使用eval
+      'no-implied-eval': 'error', // 禁止使用隐式eval
+      'no-new-func': 'error', // 禁止使用Function构造函数
+      'no-return-assign': 'error', // 禁止在return语句中使用赋值语句
     },
   },
   // 针对特定文件类型的规则

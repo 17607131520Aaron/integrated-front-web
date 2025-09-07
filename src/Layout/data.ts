@@ -1,4 +1,5 @@
 import type { IRouterItem } from '@/store/userStore/type';
+
 import type { IMenuItem } from './type';
 
 export const convertToMenuItems = (data: IRouterItem[]): IMenuItem[] => {

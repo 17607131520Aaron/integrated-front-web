@@ -1,6 +1,7 @@
 
 
 import path from 'path';
+
 import react from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig, loadEnv, type UserConfig } from 'vite';

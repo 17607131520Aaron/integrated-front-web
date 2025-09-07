@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { IUser, IUserState } from './type';
-
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 // 初始状态

@@ -43,13 +43,7 @@
     "emitDeclarationOnly": false,
     "incremental": false
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/*.d.ts",
-    "vite.config.ts"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "src/**/*.d.ts", "vite.config.ts"],
+  "exclude": ["node_modules", "dist", "build", "coverage", "**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
   "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo"
 }

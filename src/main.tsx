@@ -1,10 +1,13 @@
-import { ConfigProvider } from 'antd';
-import ZhCN from 'antd/locale/zh_CN';
 import { Suspense } from 'react';
+
+import { ConfigProvider } from 'antd';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+
+import ZhCN from 'antd/locale/zh_CN';
+
 import routers from './router';
 import { persist, store } from './store';
 import './styles/index.scss';
