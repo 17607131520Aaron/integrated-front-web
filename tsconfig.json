@@ -1,49 +1,109 @@
 {
   "compilerOptions": {
-    "target": "ES2023",
-    "useDefineForClassFields": true,
-    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    /* 基础配置 */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
     "module": "ESNext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "useDefineForClassFields": true,
     "skipLibCheck": true,
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    /* 打包工具模式 */
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* JavaScript Support */
+    /* JavaScript 支持 */
     "allowJs": true,
     "checkJs": false,
 
-    /* Linting */
+    /* 类型检查 */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": false,
+    "exactOptionalPropertyTypes": false,
+
+    /* 代码质量检查 */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+
+    /* 模块解析 */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/types/*": ["src/types/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/assets/*": ["src/assets/*"]
+    },
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": false,
-    "incremental": false
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    /* 性能优化 */
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "removeComments": false,
+    "importHelpers": false,
+    "downlevelIteration": false,
+
+    /* 实验性功能 */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* 其他配置 */
+    "newLine": "lf"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "src/**/*.d.ts", "vite.config.ts"],
-  "exclude": ["node_modules", "dist", "build", "coverage", "**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
-  "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo"
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js", 
+    "src/**/*.jsx",
+    "src/**/*.d.ts",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "*.config.ts",
+    "*.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build", 
+    "coverage",
+    "public",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts", 
+    "**/*.spec.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "cypress",
+    "playwright",
+    "e2e"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
 }
