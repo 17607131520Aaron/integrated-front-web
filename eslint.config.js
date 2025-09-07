@@ -93,6 +93,10 @@ export default tseslint.config([
           selector: 'typeAlias', // 类型别名命名规范
           format: ['PascalCase'], // 使用大驼峰命名
           prefix: ['T'], // 使用T前缀
+          filter: {
+            regex: '^(RootState|AppDispatch)$', // 排除Redux标准类型
+            match: false,
+          },
         },
         {
           selector: 'enum', // 枚举命名规范
