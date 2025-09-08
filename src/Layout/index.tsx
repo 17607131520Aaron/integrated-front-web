@@ -6,12 +6,14 @@ import { Link, Outlet } from 'react-router-dom';
 
 import type { RootState } from '@/store';
 import { setMenuData } from '@/store/userStore/userSlice';
+import type { IMenuItem } from '@/types/base';
 
 import { getSystemName } from './data';
 import useLayout from './useLayout';
 
-import type { IMenuItem } from './type';
+
 import type { MenuProps } from 'antd';
+import './index.scss'
 
 const { Header, Content, Sider } = Layout;
 

@@ -55,7 +55,14 @@ export const userSlice = createSlice({
 });
 
 // 导出 actions
-export const { addUser, updateUser, deleteUser, setUser, setUserList, setUserDetail, setMenuData } =
+export const {
+  addUser,
+  updateUser,
+  deleteUser,
+  setUser,
+  setUserList,
+  setUserDetail,
+  setMenuData } =
   userSlice.actions;
 
 // 导出 reducer

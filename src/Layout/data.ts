@@ -1,6 +1,5 @@
 import type { IRouterItem } from '@/store/userStore/type';
-
-import type { IMenuItem } from './type';
+import type { IMenuItem } from '@/types/base';
 
 export const convertToMenuItems = (data: IRouterItem[]): IMenuItem[] => {
   return data.map(item => {

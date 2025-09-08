@@ -1,14 +1,4 @@
-export interface IMenuItem {
-  id: string;
-  key: string;
-  title: string;
-  label: string;
-  code: string;
-  path: string;
-  icon?: React.ReactNode | null;
-  sortOrder: number;
-  children?: Array<IMenuItem> | undefined;
-}
+import type { IMenuItem } from '@/types/base';
 
 // 定义用户类型接口
 export interface IUser {
@@ -23,13 +13,6 @@ export interface IUserState {
   userDetail: IUser | Record<string, never>;
   routerList: Array<IMenuItem>;
 }
-
-// 初始状态
-export const initialState: IUserState = {
-  userList: [],
-  userDetail: {},
-  routerList: [],
-};
 
 export interface IRouterItem {
   path: string;

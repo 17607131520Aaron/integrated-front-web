@@ -1,0 +1,110 @@
+.asp-comprehension-home {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  :where(.css-dev-only-do-not-override-1htoz2s).ant-menu-light,
+  :where(.css-dev-only-do-not-override-1htoz2s).ant-menu-light > .ant-menu {
+    height: 100%;
+  }
+
+  &-menu {
+    border-right: 1px solid #e9ebed;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    height: 100%;
+    margin-top: 5px;
+    transition: width 0.28s;
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      margin: 0 10px;
+      padding: 0 15px;
+      background: #237ffa;
+      border-radius: 4px;
+      transition: padding 0.28s;
+      flex-shrink: 0;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      &-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        white-space: nowrap;
+      }
+    }
+
+    &-search {
+      position: relative;
+      z-index: 1000;
+      padding: 12px 12px 0;
+      flex-shrink: 0;
+    }
+
+    &-content {
+      width: 100%;
+      height: calc(100% - 106px);
+      flex-grow: 1;
+      margin-top: 12px;
+      overflow-y: hidden;
+
+      &:hover {
+        // 鼠标移入时
+        overflow-y: auto; // 显示滚动条
+      }
+    }
+  }
+
+  &-header {
+    width: 100%;
+    height: 65px;
+    padding: 12px;
+    background-color: rgb(255 255 255);
+    border-bottom: 1px solid #e9ebed;
+
+    &-content {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      &-user {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: fit-content;
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+        min-width: 100px;
+
+        img {
+          width: 40px;
+          height: 40px;
+
+          // border-radius: 50%;
+          border-radius: 8px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &-content {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 / 0.1);
+    box-sizing: border-box;
+  }
+}

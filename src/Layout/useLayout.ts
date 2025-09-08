@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { IMenuItem } from './type';
+import type { IMenuItem } from '@/types/base';
 
 interface IUseLayout {
   routerState: IMenuItem[];
