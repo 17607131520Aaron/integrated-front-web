@@ -38,10 +38,6 @@ const Login: React.FC = () => {
     }
   };
 
-  const handleSocialLogin = (platform: string) => {
-    message.info(`${platform} 登录功能开发中...`);
-  };
-
   return (
     <div className="login-container">
       <div className="login-background">
