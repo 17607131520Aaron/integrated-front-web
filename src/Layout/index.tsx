@@ -11,7 +11,6 @@ import type { IMenuItem } from '@/types/base';
 import { getSystemName } from './data';
 import useLayout from './useLayout';
 
-
 import type { MenuProps } from 'antd';
 import './index.scss'
 

@@ -50,7 +50,14 @@ export default tseslint.config([
       // 设置项
       'import/resolver': {
         // 导入解析器设置
-        typescript: {}, // 使用TypeScript解析器
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
+        alias: {
+          map: [['@', './src']],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
       },
       react: {
         // React设置
@@ -103,6 +110,10 @@ export default tseslint.config([
           format: ['PascalCase'], // 使用大驼峰命名
           prefix: ['E'], // 使用E前缀
         },
+        {
+          selector: 'class', // 类命名规范
+          format: ['PascalCase'], // 使用大驼峰命名
+        },
       ],
 
       // 导入顺序规则
@@ -151,7 +162,7 @@ export default tseslint.config([
       // 通用规则
       'no-console': ['warn', { allow: ['warn', 'error'] }], // 警告使用console，允许warn和error
       'no-debugger': 'error', // 禁止使用debugger
-      'max-lines': ['error', { max: 500, skipBlankLines: true, skipComments: true }], // 限制文件最大行数
+      'max-lines': ['error', { max: 300, skipBlankLines: true, skipComments: true }], // 限制文件最大行数
       'max-depth': ['error', 4], // 限制嵌套块的最大深度
       'max-nested-callbacks': ['error', 3], // 限制回调嵌套的最大深度
       'max-params': ['error', 5], // 限制函数参数的最大数量
@@ -163,6 +174,25 @@ export default tseslint.config([
       'no-implied-eval': 'error', // 禁止使用隐式eval
       'no-new-func': 'error', // 禁止使用Function构造函数
       'no-return-assign': 'error', // 禁止在return语句中使用赋值语句
+      
+      // 代码风格规则 (融合新配置的优点)
+      'max-len': [
+        'error',
+        {
+          code: 100,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreComments: true,
+        },
+      ],
+      'no-multiple-empty-lines': ['error', { max: 1 }],
+      'object-shorthand': ['error', 'always'],
+      'prefer-template': 'error',
+      'no-param-reassign': 'error',
+      
+      // React 规则补充
+      'react/react-in-jsx-scope': 'off', // React 17+ 不需要导入 React
+      'react/prop-types': 'off', // TypeScript 项目不需要 prop-types
     },
   },
   // 针对特定文件类型的规则
