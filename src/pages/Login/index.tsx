@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 
 import {
-  AlipayOutlined,
   EyeInvisibleOutlined,
   EyeTwoTone,
-  GithubOutlined,
   LockOutlined,
   LoginOutlined,
   UserOutlined,
-  WechatOutlined,
 } from '@ant-design/icons';
-import { Button, Card, Checkbox, Divider, Form, Input, message, Space, Typography } from 'antd';
+import { Button, Card, Checkbox, Form, Input, message, Typography } from 'antd';
 
 import './index.scss';
 
@@ -60,9 +57,6 @@ const Login: React.FC = () => {
             <Title level={2} className="login-title">
               欢迎回来
             </Title>
-            <Text type="secondary" className="login-subtitle">
-              请登录您的账户继续使用
-            </Text>
           </div>
 
           <Form
@@ -122,11 +116,11 @@ const Login: React.FC = () => {
             </Form.Item>
           </Form>
 
-          <Divider className="login-divider">
+          {/* <Divider className="login-divider">
             <Text type="secondary">或者使用以下方式登录</Text>
-          </Divider>
+          </Divider> */}
 
-          <div className="social-login">
+          {/* <div className="social-login">
             <Space size="large">
               <Button
                 shape="circle"
@@ -150,11 +144,10 @@ const Login: React.FC = () => {
                 onClick={() => handleSocialLogin('支付宝')}
               />
             </Space>
-          </div>
+          </div> */}
 
           <div className="login-footer">
             <Text type="secondary">
-              还没有账户？{' '}
               <Link href="#" strong>
                 立即注册
               </Link>
