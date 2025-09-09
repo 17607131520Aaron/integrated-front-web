@@ -1,0 +1,366 @@
+.login-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 50%, rgb(120 119 198 / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgb(255 255 255 / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgb(120 119 198 / 0.2) 0%, transparent 50%);
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 0.1);
+  backdrop-filter: blur(1px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.login-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.login-card {
+  padding: 40px 32px;
+  background: rgb(255 255 255 / 0.95);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.1), 0 15px 12px rgb(0 0 0 / 0.08),
+    inset 0 1px 0 rgb(255 255 255 / 0.6);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px rgb(0 0 0 / 0.15), 0 20px 20px rgb(0 0 0 / 0.1),
+      inset 0 1px 0 rgb(255 255 255 / 0.6);
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-logo {
+  margin-bottom: 16px;
+}
+
+.logo-icon {
+  font-size: 48px;
+  color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px !important;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.login-form {
+  .ant-form-item {
+    margin-bottom: 20px;
+  }
+}
+
+.login-input {
+  height: 48px;
+  background: rgb(255 255 255 / 0.8);
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #667eea;
+    background: rgb(255 255 255 / 0.9);
+  }
+
+  &:focus,
+  &.ant-input-focused {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgb(102 126 234 / 0.1);
+    background: rgb(255 255 255 / 1);
+  }
+
+  .ant-input-prefix {
+    color: #8c9eff;
+    margin-right: 12px;
+  }
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+
+  .ant-checkbox-wrapper {
+    font-size: 14px;
+    color: #5a6c7d;
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: #667eea;
+      border-color: #667eea;
+    }
+  }
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #667eea;
+  transition: color 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: #764ba2;
+  }
+}
+
+.login-button {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgb(102 126 234 / 0.3);
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgb(102 126 234 / 0.4);
+  }
+}
+
+.login-divider {
+  margin: 32px 0 24px;
+
+  .ant-divider-inner-text {
+    padding: 0 16px;
+    font-size: 13px;
+    color: #8c9eff;
+    background: transparent;
+  }
+
+  &::before,
+  &::after {
+    border-top-color: rgb(140 158 255 / 0.2);
+  }
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: rgb(255 255 255 / 0.8);
+  border: 1px solid #e1e8ed;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgb(0 0 0 / 0.1);
+  }
+
+  &.github {
+    &:hover {
+      color: #fff;
+      background: #24292e;
+      border-color: #24292e;
+    }
+  }
+
+  &.wechat {
+    &:hover {
+      color: #fff;
+      background: #07c160;
+      border-color: #07c160;
+    }
+  }
+
+  &.alipay {
+    &:hover {
+      color: #fff;
+      background: #1677ff;
+      border-color: #1677ff;
+    }
+  }
+
+  .anticon {
+    font-size: 20px;
+  }
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
+
+  .ant-typography {
+    font-size: 14px;
+    color: #7f8c8d;
+
+    a {
+      font-weight: 600;
+      color: #667eea;
+      text-decoration: none;
+
+      &:hover {
+        color: #764ba2;
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (width <= 768px) {
+  .login-content {
+    max-width: 350px;
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .logo-icon {
+    font-size: 40px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-input {
+    height: 44px;
+  }
+
+  .login-button {
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .social-button {
+    width: 44px;
+    height: 44px;
+
+    .anticon {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (width <= 480px) {
+  .login-content {
+    max-width: 320px;
+    padding: 12px;
+  }
+
+  .login-card {
+    padding: 28px 20px;
+  }
+
+  .login-options {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+// 暗色主题适配
+@media (prefers-color-scheme: dark) {
+  .login-card {
+    background: rgb(30 30 30 / 0.95);
+    border: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  .login-title {
+    color: #fff;
+  }
+
+  .login-subtitle {
+    color: #b0b0b0;
+  }
+
+  .login-input {
+    color: #fff;
+    background: rgb(40 40 40 / 0.8);
+    border-color: #404040;
+
+    &:hover {
+      background: rgb(40 40 40 / 0.9);
+    }
+
+    &:focus,
+    &.ant-input-focused {
+      background: rgb(40 40 40 / 1);
+    }
+  }
+
+  .social-button {
+    color: #fff;
+    background: rgb(40 40 40 / 0.8);
+    border-color: #404040;
+  }
+}

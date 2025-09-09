@@ -54,8 +54,7 @@ export default tseslint.config([
           alwaysTryTypes: true,
           project: './tsconfig.json',
         },
-        alias: {
-          map: [['@', './src']],
+        node: {
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         },
       },
