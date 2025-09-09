@@ -1,3 +1,5 @@
+import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
+
 import { configureStore } from '@reduxjs/toolkit';
 import {
   FLUSH,
@@ -9,7 +11,6 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist';
-import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 
 import { rootReducer, whitelist } from './store';
 

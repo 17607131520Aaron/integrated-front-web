@@ -1,9 +1,9 @@
 import { notification } from 'antd';
+
 import request, { AxiosError } from 'axios';
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 import type { IErrorMessage, IRequestConfig, IResponse } from '@/types/base';
-
-import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 const apiPrefix = import.meta.env.VITE_APP_BASE_API;
 const DEFAULT_TIMEOUT = 5000;

@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 
-import { Input, Layout, Menu } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
+
+import type { MenuProps } from 'antd';
+import { Input, Layout, Menu } from 'antd';
 
 import type { RootState } from '@/store';
 import { setMenuData } from '@/store/userStore/userSlice';
@@ -11,8 +13,7 @@ import type { IMenuItem } from '@/types/base';
 import { getSystemName } from './data';
 import useLayout from './useLayout';
 
-import type { MenuProps } from 'antd';
-import './index.scss'
+import './index.scss';
 
 const { Header, Content, Sider } = Layout;
 
@@ -31,7 +32,9 @@ const LayoutPages: React.FC = () => {
   }, []);
 
   const formatMenuItems = (items: IMenuItem[]): MenuProps['items'] => {
-    if (!items || items.length === 0) {return [];}
+    if (!items || items.length === 0) {
+      return [];
+    }
     return items.map(item => {
       return {
         key: item.id,

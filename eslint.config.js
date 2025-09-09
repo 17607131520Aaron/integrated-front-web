@@ -128,27 +128,38 @@ export default tseslint.config([
             'internal', // 内部模块
             ['parent', 'sibling', 'index'], // 父级、同级和索引文件
             'type', // 类型导入
-            'object', // 对象导入
           ],
           pathGroups: [
-            // 路径分组
+            // React 导入 - 第一优先级
             {
-              pattern: 'react', // React相关导入
-              group: 'external', // 归类为外部模块
-              position: 'before', // 置于外部模块之前
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
             },
             {
-              pattern: 'antd/**', // Ant Design相关导入
-              group: 'external', // 归类为外部模块
-              position: 'after', // 置于外部模块之后
+              pattern: 'react-*',
+              group: 'external',
+              position: 'before',
+            },
+            // 插件库导入 - 第二优先级
+            {
+              pattern: '{antd,antd/**,@ant-design/**}',
+              group: 'external',
+              position: 'after',
             },
             {
-              pattern: '@/**', // 项目内部导入
-              group: 'internal', // 归类为内部模块
-              position: 'after', // 置于内部模块之后
+              pattern: '{ahooks,@uidotdev/**,lodash,dayjs,axios,js-cookie,redux*,@reduxjs/**}',
+              group: 'external',
+              position: 'after',
+            },
+            // 项目内部导入 - 第三优先级
+            {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'after',
             },
           ],
-          pathGroupsExcludedImportTypes: ['react'], // 排除React类型导入
+          pathGroupsExcludedImportTypes: ['react'],
           'newlines-between': 'always', // 分组之间总是添加空行
           alphabetize: {
             // 字母顺序排序
