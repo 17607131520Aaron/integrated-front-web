@@ -216,30 +216,56 @@
 
 .login-card {
   position: relative;
-  padding: 40px 32px;
-  background: rgb(255 255 255 / 0.95);
-  border: 1px solid rgb(255 255 255 / 0.6);
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(20px);
-  animation: slide-in-up 0.6s ease-out;
+  padding: 48px 40px;
+  background: linear-gradient(145deg, rgb(255 255 255 / 0.95), rgb(255 255 255 / 0.9));
+  border: 1px solid rgb(255 255 255 / 0.3);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(25px);
+  animation: slide-in-up 0.8s ease-out;
   box-shadow: 
-    0 8px 32px rgb(0 0 0 / 0.06),
-    inset 0 1px 0 rgb(255 255 255 / 0.9);
+    0 20px 60px rgb(0 0 0 / 0.1),
+    0 8px 25px rgb(0 0 0 / 0.08),
+    inset 0 1px 0 rgb(255 255 255 / 0.8);
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.8), transparent);
+    content: '';
+  }
 
   &:hover {
-    background: rgb(255 255 255 / 0.98);
-    transform: translateY(-2px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 
-      0 12px 40px rgb(0 0 0 / 0.08),
+      0 30px 80px rgb(0 0 0 / 0.15),
+      0 12px 35px rgb(0 0 0 / 0.1),
       inset 0 1px 0 rgb(255 255 255 / 1);
   }
 }
 
 .login-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   animation: slide-in-up 0.8s ease-out 0.2s both;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #1677ff, #00d4aa);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    content: '';
+    opacity: 0.6;
+  }
 }
 
 .login-logo {
@@ -247,27 +273,54 @@
 }
 
 .logo-icon {
-  font-size: 48px;
-  color: #fff;
-  filter: drop-shadow(0 2px 8px rgb(0 0 0 / 0.2));
-  transition: all 0.3s ease;
+  position: relative;
+  font-size: 56px;
+  background: linear-gradient(135deg, #1677ff, #00d4aa);
+  transition: all 0.4s ease;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 12px rgb(22 119 255 / 0.3));
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgb(22 119 255 / 0.1), rgb(0 212 170 / 0.1));
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%);
+    content: '';
+  }
 
   &:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 4px 12px rgb(0 0 0 / 0.3));
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 6px 20px rgb(22 119 255 / 0.4));
+
+    &::before {
+      background: linear-gradient(135deg, rgb(22 119 255 / 0.2), rgb(0 212 170 / 0.2));
+      transform: translate(-50%, -50%) scale(1.2);
+    }
   }
 }
 
 .login-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 8px !important;
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1f2937, #374151);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px !important;
+  letter-spacing: -0.5px;
 }
 
 .login-subtitle {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   color: #6b7280;
+  opacity: 0.8;
 }
 
 .login-form {
@@ -284,29 +337,61 @@
 }
 
 .login-input {
-  height: 48px;
-  background: rgb(255 255 255 / 0.9);
-  border: 1px solid rgb(255 255 255 / 0.3);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  position: relative;
+  height: 56px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+  background: rgb(255 255 255 / 0.8);
+  border: 2px solid rgb(255 255 255 / 0.3);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.4), transparent);
+    transition: left 0.6s ease;
+  }
 
   &:hover {
     background: rgb(255 255 255 / 0.95);
-    border-color: rgb(255 255 255 / 0.5);
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    border-color: rgb(22 119 255 / 0.3);
+    box-shadow: 
+      0 8px 25px rgb(0 0 0 / 0.1),
+      0 4px 12px rgb(22 119 255 / 0.1);
+    transform: translateY(-2px);
+
+    &::before {
+      left: 100%;
+    }
   }
 
   &:focus,
   &.ant-input-focused {
     background: rgb(255 255 255 / 1);
     border-color: #1677ff;
-    box-shadow: 0 0 0 2px rgb(22 119 255 / 0.2);
+    box-shadow: 
+      0 0 0 4px rgb(22 119 255 / 0.1),
+      0 12px 30px rgb(0 0 0 / 0.15);
+    transform: translateY(-4px);
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    color: #9ca3af;
   }
 
   .ant-input-prefix {
+    font-size: 18px;
     color: #1677ff;
-    margin-right: 12px;
+    margin-right: 16px;
   }
 }
 
@@ -315,70 +400,139 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0;
+  padding: 4px 0;
 
   .ant-checkbox-wrapper {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
     color: #374151;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #1677ff;
+    }
+
+    .ant-checkbox-inner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgb(22 119 255 / 0.2);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      background-color: rgb(255 255 255 / 0.9);
+    }
 
     .ant-checkbox-checked .ant-checkbox-inner {
-      background-color: #1677ff;
+      background: linear-gradient(135deg, #1677ff, #00d4aa);
       border-color: #1677ff;
+      transform: scale(1.1);
+    }
+
+    .ant-checkbox:hover .ant-checkbox-inner {
+      border-color: #1677ff;
+      box-shadow: 0 0 0 2px rgb(22 119 255 / 0.1);
     }
   }
 }
 
 .forgot-password {
-  font-size: 14px;
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
   color: #1677ff;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #1677ff, #00d4aa);
+    transition: width 0.3s ease;
+  }
 
   &:hover {
     color: #0958d9;
+    transform: translateY(-1px);
+
+    &::after {
+      width: 100%;
+    }
   }
 }
 
 .login-button {
-  height: 48px;
-  font-size: 16px;
+  position: relative;
+  height: 56px;
+  font-size: 18px;
   font-weight: 600;
-  background: #1677ff;
+  background: linear-gradient(135deg, #1677ff, #00d4aa);
   border: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgb(22 119 255 / 0.3);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 25px rgb(22 119 255 / 0.3),
+    0 4px 12px rgb(0 212 170 / 0.2);
+  overflow: hidden;
+  letter-spacing: 0.5px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
   &:active {
-    transform: translateY(1px);
+    transform: translateY(2px) scale(0.98);
   }
 
   &:hover:not(:disabled) {
-    background: #0958d9;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgb(22 119 255 / 0.4);
+    background: linear-gradient(135deg, #0958d9, #00b894);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+      0 15px 40px rgb(22 119 255 / 0.4),
+      0 8px 20px rgb(0 212 170 / 0.3);
+
+    &::before {
+      left: 100%;
+    }
   }
 }
 
 .login-divider {
-  margin: 24px 0 20px;
+  margin: 32px 0 24px;
 
   .ant-divider-inner-text {
-    padding: 0 16px;
-    font-size: 13px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 500;
     color: #6b7280;
     background: transparent;
   }
 
   &::before,
   &::after {
-    border-top-color: rgb(107 114 128 / 0.2);
+    border-top: 1px solid rgb(107 114 128 / 0.2);
   }
 }
 
 .social-login {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+  gap: 16px;
 }
 
 .social-button {
@@ -388,65 +542,64 @@
   align-items: center;
   width: 56px;
   height: 56px;
-  background: linear-gradient(#fff, #fff) padding-box,
-              linear-gradient(135deg, #e1e8ed, #f0f0f0) border-box;
-  border: 2px solid transparent;
-  border-radius: 50%;
+  color: #6b7280;
+  background: rgb(255 255 255 / 0.9);
+  border: 2px solid rgb(255 255 255 / 0.3);
+  border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  backdrop-filter: blur(15px);
 
   &::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    transition: all 0.4s ease;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.4), transparent);
+    transition: left 0.6s ease;
   }
 
   &:hover {
-    transform: translateY(-4px) scale(1.1);
-    box-shadow: 0 12px 30px rgb(0 0 0 / 0.2);
+    background: rgb(255 255 255 / 1);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 
+      0 12px 30px rgb(0 0 0 / 0.15),
+      0 6px 15px rgb(0 0 0 / 0.1);
 
     &::before {
-      width: 100%;
-      height: 100%;
+      left: 100%;
     }
   }
 
   &.github {
     &:hover {
-      color: #fff;
+      color: #24292e;
       border-color: #24292e;
-
-      &::before {
-        background: #24292e;
-      }
+      box-shadow: 
+        0 12px 30px rgb(36 41 46 / 0.2),
+        0 6px 15px rgb(36 41 46 / 0.1);
     }
   }
 
   &.wechat {
     &:hover {
-      color: #fff;
+      color: #07c160;
       border-color: #07c160;
-
-      &::before {
-        background: #07c160;
-      }
+      box-shadow: 
+        0 12px 30px rgb(7 193 96 / 0.2),
+        0 6px 15px rgb(7 193 96 / 0.1);
     }
   }
 
   &.alipay {
     &:hover {
-      color: #fff;
+      color: #1677ff;
       border-color: #1677ff;
-
-      &::before {
-        background: #1677ff;
-      }
+      box-shadow: 
+        0 12px 30px rgb(22 119 255 / 0.2),
+        0 6px 15px rgb(22 119 255 / 0.1);
     }
   }
 
@@ -454,29 +607,48 @@
     position: relative;
     z-index: 1;
     font-size: 24px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
   }
 
   &:hover .anticon {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.2) rotate(8deg);
   }
 }
 
 .login-footer {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 24px;
 
   .ant-typography {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 400;
     color: #6b7280;
 
     a {
+      position: relative;
       font-weight: 600;
       color: #1677ff;
+      transition: all 0.3s ease;
       text-decoration: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #1677ff, #00d4aa);
+        transition: width 0.3s ease;
+      }
 
       &:hover {
         color: #0958d9;
+        transform: translateY(-1px);
+
+        &::after {
+          width: 100%;
+        }
       }
     }
   }
@@ -485,21 +657,21 @@
 // 响应式设计
 @media (width <= 768px) {
   .login-content {
-    max-width: 350px;
+    max-width: 340px;
     padding: 16px;
   }
 
   .login-card {
     padding: 32px 24px;
-    border-radius: 16px;
+    border-radius: 12px;
   }
 
   .logo-icon {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .login-title {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .login-input {
@@ -523,12 +695,12 @@
 
 @media (width <= 480px) {
   .login-content {
-    max-width: 320px;
+    max-width: 300px;
     padding: 12px;
   }
 
   .login-card {
-    padding: 28px 20px;
+    padding: 24px 20px;
   }
 
   .login-options {
@@ -536,41 +708,72 @@
     gap: 12px;
     align-items: flex-start;
   }
+
+  .social-login {
+    .ant-space {
+      gap: 12px !important;
+    }
+  }
 }
 
-// 暗色主题适配
-@media (prefers-color-scheme: dark) {
+// 暗色主题适配（已默认应用深色主题）
+@media (prefers-color-scheme: light) {
   .login-card {
-    background: rgb(30 30 30 / 0.95);
-    border: 1px solid rgb(255 255 255 / 0.1);
+    background: rgb(255 255 255 / 0.95);
+    border: 1px solid rgb(0 0 0 / 0.1);
+    box-shadow: 
+      0 8px 32px rgb(0 0 0 / 0.1),
+      inset 0 1px 0 rgb(255 255 255 / 0.9);
   }
 
   .login-title {
-    color: #fff;
+    color: #1f2937;
   }
 
   .login-subtitle {
-    color: #b0b0b0;
+    color: #6b7280;
   }
 
   .login-input {
-    color: #fff;
-    background: rgb(40 40 40 / 0.8);
-    border-color: #404040;
+    color: #1f2937;
+    background: rgb(255 255 255 / 0.9);
+    border-color: rgb(0 0 0 / 0.15);
 
     &:hover {
-      background: rgb(40 40 40 / 0.9);
+      background: rgb(255 255 255 / 0.95);
+      border-color: rgb(0 0 0 / 0.25);
     }
 
     &:focus,
     &.ant-input-focused {
-      background: rgb(40 40 40 / 1);
+      background: rgb(255 255 255 / 1);
+    }
+
+    &::placeholder {
+      color: #6b7280;
     }
   }
 
+  .login-options .ant-checkbox-wrapper {
+    color: #374151;
+
+    .ant-checkbox-inner {
+      background-color: rgb(255 255 255 / 0.9);
+      border-color: rgb(0 0 0 / 0.3);
+    }
+  }
+
+  .login-divider .ant-divider-inner-text {
+    color: #6b7280;
+  }
+
+  .login-footer .ant-typography {
+    color: #6b7280;
+  }
+
   .social-button {
-    color: #fff;
-    background: rgb(40 40 40 / 0.8);
-    border-color: #404040;
+    color: #6b7280;
+    background: rgb(255 255 255 / 0.8);
+    border-color: rgb(0 0 0 / 0.2);
   }
 }
