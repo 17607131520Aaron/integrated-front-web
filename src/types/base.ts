@@ -12,6 +12,16 @@ export interface IMenuItem {
   children?: Array<IMenuItem> | undefined;
 }
 
+// 请求配置接口
+export interface IRequestConfig<T> {
+  url: string;
+  data: T;
+  handleRaw: boolean;
+  timeout?: number;
+  cancelToken?: AbortController;
+  retry?: number;
+}
+
 // 响应数据接口
 export interface IResponse<T = unknown> {
   code: number;
@@ -24,14 +34,4 @@ export interface IErrorMessage {
   message: string;
   description: string;
   action?: () => void;
-}
-
-// 请求配置接口
-export interface IRequestConfig<T> {
-  url: string;
-  data?: T;
-  handleRaw?: boolean;
-  timeout?: number;
-  cancelToken?: AbortController;
-  retry?: number;
 }
